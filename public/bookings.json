@@ -1,0 +1,47 @@
+[
+    {"name":"Battery Replacement",
+    "slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+    "price":300,
+    "img":"https://i.ibb.co/924bpnY/battery.png"
+},
+{"name":"Engine-tune-up",
+"slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+"price":800,
+"img":"https://i.ibb.co/7KtnnXw/engine-tune-up.png"
+},
+{"name":"Antifreeze added",
+"slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+"price":350,
+"img":"https://i.ibb.co/w7BjGNS/Antifreeze.png"
+},
+{"name":"Oil filter change",
+"slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+"price":200,
+"img":"https://i.ibb.co/n3NCm6Z/oil-filter.png"
+},
+{"name":"Wiper Blades",
+"slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+"price":80,
+"img":"https://i.ibb.co/Z1WBGgF/wiper-blades.png"
+},
+{"name":"Brake work",
+"slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+"price":500,
+"img":"https://i.ibb.co/VYGSHFD/brak.png"
+},
+{"name":"New Tries",
+"slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+"price":250,
+"img":"https://i.ibb.co/7n1kcTw/new-tries.png"
+},
+{"name":"Wheels Aligned",
+"slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+"price":"1000",
+"img":"https://i.ibb.co/NNW78qS/wheels-aligned.png"
+},
+{"name":"Automobiles Washing",
+"slots":["9.00 am-10.00 am","10.00 am-11.00 am","11.00 am - 12.00 pm","12.00 pm - 01.00 pm","2.00 pm - 3.00 pm","3.00 pm - 4.00 pm","5.00 pm - 6.00 pm","6.00 pm - 7.00 pm","7.30 pm -8.30 pm","8.30 pm-9.30 pm","9.30 pm - 10.30 pm"],
+"price":300,
+"img":"https://i.ibb.co/Lns1jWt/bb.png"
+}
+]
