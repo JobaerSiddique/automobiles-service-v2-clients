@@ -2,8 +2,8 @@ import React from 'react';
 import fast from '../images/fast.png'
 const FastService = () => {
     return (
-        <div className='lg:mt-20  ' data-themes="synthwave" >
-            <div className="hero  bg-base-200 rounded-3xl">
+        <div className='mt-10 lg:mt-20  '  >
+            <div className="hero  bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 rounded-3xl">
   <div className="hero-content flex-col lg:flex-row justify-center">
     <img src={fast} className=" rounded-lg shadow-2xl p-5"  />
     <div>

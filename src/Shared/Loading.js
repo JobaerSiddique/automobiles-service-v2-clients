@@ -1,5 +1,5 @@
 import React from 'react';
-import loading from '../images/loading.jpg'
+import loading from '../images/loading.png'
 const Loading = () => {
     return (
         <div>

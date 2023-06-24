@@ -61,9 +61,9 @@ const MyAppoinment = () => {
     
     return (
         <div className='md:mt-20'>
-            <h1 className='text-center font-bold text-xl lg:text-5xl mt-4 '>Welcome to <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Taqwaa Service</span> </h1>
+            <h1 className='text-center font-bold text-xl text-white lg:text-5xl mt-4 '>Welcome to <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Taqwaa Service</span> </h1>
 
-            <h3 className='font-semibold text-xl lg:text-2xl mt-5 p-4'>My service Bookings: {booking.length}</h3>
+            <h3 className='font-semibold text-white text-xl lg:text-2xl mt-5 p-4'>My service Bookings: {booking.length}</h3>
 
          
             <div className="overflow-x-auto">

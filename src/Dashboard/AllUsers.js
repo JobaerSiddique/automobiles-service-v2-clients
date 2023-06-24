@@ -77,10 +77,10 @@ const AllUsers = () => {
     }
     return (
         <div>
-            <h1 className='text-xl lg:text-3xl font-bold '>All Users : {users.length}</h1>
+            <h1 className='text-xl lg:text-3xl font-bold text-white mt-8 '>All Users : {users.length}</h1>
             
             <div className="overflow-x-auto mt-7">
-  <table className="table  table-x ">
+  <table className="table w-full ">
     
     <thead >
       <tr className='hover  '>

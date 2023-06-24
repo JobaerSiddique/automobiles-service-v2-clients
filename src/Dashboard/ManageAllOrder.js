@@ -25,27 +25,27 @@ const ManageAllOrder = () => {
     }
     return (
         <div>
-            <h1 className='text-center font-bold lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-600'>Manage All Services : {services.length}</h1>
+            <h1 className='text-center font-bold lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-200 to-pink-200'>Manage All Services : {services.length}</h1>
 
 
             <div className='mt-8'>
             <div className="overflow-x-auto border">
-  <table className="table table-sm">
+  <table className="table  w-full ">
     {/* head */}
-    <thead className='bg-green-600 '>
+    <thead >
       <tr>
         <th></th>
-        <th className='text-center text-white'>Customer Email</th>
-        <th className='text-center text-white'>Provider Name</th>
-        <th className='text-center text-white'>ServiceName</th>
-        <th className='text-center text-white'>Price</th>
-        <th className='text-center text-white' >Date</th>
-        <th className='text-center text-white'>Registration No</th>
-        <th className='text-center text-white'>Phone</th>
+        <th className='text-center'>Customer Email</th>
+        <th className='text-center'>Provider Name</th>
+        <th className='text-center'>ServiceName</th>
+        <th className='text-center'>Price</th>
+        <th className='text-center' >Date</th>
+        <th className='text-center'>Registration No</th>
+        <th className='text-center'>Phone</th>
       </tr>
     </thead>
     <tbody>
-      {/* row 1 */}
+      
       {services.map((ser,index)=><tr key={ser._id} className="hover">
         <th className='text-center'>{index+1}</th>
         <td className='text-center'>{ser.CustomerEmail}</td>

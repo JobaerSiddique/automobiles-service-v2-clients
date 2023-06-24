@@ -46,7 +46,7 @@ const AvailableBookings = ({selected,serviceId}) => {
    },[serviceId])
     return (
         <div className='mt-10 '>
-           <h1 className='text-center text-primary-focus font-bold text-xl lg:text-5xl'>Available Bookings on {format(selected,'PP')} </h1> 
+           <h1 className='text-center text-white font-bold text-xl lg:text-5xl'>Available Bookings on {format(selected,'PP')} </h1> 
 
            <div className='grid gap-16 m-8 justify-items-center md:grid-cols-2 lg:grid-cols-3' style={{backgroundImage:`url(${pat})`, backgroundRepeat:"no-repeat"}}>
            {bookings.map(booking=><BookingsCard 

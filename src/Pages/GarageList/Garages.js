@@ -14,7 +14,7 @@ const Garages = () => {
     return (
         <div>
             
-            <div   className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 justify-items-center'>
+            <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center bg-gradient-to-r from-slate-500 to-slate-800 p-8'>
                 {
                     garages.map(garage=><GarageInfo
                         garage={garage}

@@ -7,6 +7,7 @@ import AllUsers from "../Dashboard/AllUsers";
 import ManageAllOrder from "../Dashboard/ManageAllOrder";
 import MyAppoinment from "../Dashboard/MyAppoinment";
 import Review from "../Dashboard/Review";
+import GarageOrder from "../GarageSection/GarageOrder";
 import DashboardLayout from "../Layout/DashBoardLayout/DashboardLayout";
 import Main from "../Layout/Main";
 import Login from "../Login/Login";
@@ -15,6 +16,7 @@ import Garages from "../Pages/GarageList/Garages";
 import Home from "../Pages/Home";
 import Register from "../Register/Register";
 import AdminRoutes from "./AdminRoutes";
+import GarageRoutes from "./GarageRoutes";
 import RequireAuth from "./RequireAuth";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -80,6 +82,10 @@ const router = createBrowserRouter([
            {
             path:'/dashboard/admin/manageOrders',
             element:<AdminRoutes><ManageAllOrder/></AdminRoutes>
+           },
+           {
+            path:'/dashboard/garage/garageOrder',
+            element:<GarageRoutes><GarageOrder/></GarageRoutes>
            }
         ]
     }

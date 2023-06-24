@@ -5,7 +5,7 @@ import router from './Routes/router';
 
 function App() {
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className=' bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900' >
      <RouterProvider router={router}>
 
      </RouterProvider>

@@ -8,7 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^3.0.0-beta.6",
-    "daisyui": "^3.0.20",
+    "daisyui": "^2.47.0",
     "date-fns": "^2.29.3",
     "firebase": "^9.18.0",
     "react": "^18.2.0",

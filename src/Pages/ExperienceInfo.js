@@ -4,7 +4,7 @@ import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 const ExperienceInfo = () => {
     return (
-        <div className="hero  bg-base-300 lg:mt-40 rounded-xl shadow-2xl mt-10">
+        <div className="hero  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 lg:mt-40  shadow-2xl mt-10 text-white">
   <div className="hero-content flex-col lg:flex-row-reverse ">
     <img src={img} className=" rounded-xl shadow-2xl"  />
     <div  className='mt-5 p-5'>

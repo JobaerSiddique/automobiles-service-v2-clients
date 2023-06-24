@@ -40,14 +40,14 @@ const AllGarages = () => {
     return (
         <div>
             <h1 className='text-center text-xl font-semibold lg:text-5xl font-bold mt-5  text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Garages Managements</h1>
-            <h1  className=' text-xl font-[1rem] p-4 font-semibold lg:text-2xl font-bold mt-5'>Total Sign In Garages : {garages.length}</h1>
+            <h1  className=' text-xl text-white  font-[1rem] p-4 font-semibold lg:text-2xl font-bold mt-5'>Total Sign In Garages : {garages.length}</h1>
 
 
             <div className="overflow-x-auto">
-  <table className="table  table-sm">
+  <table className="table w-full">
    
-    <thead>
-      <tr>
+    <thead >
+      <tr className='bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white'>
         <th></th>
         <th className='text-center text-purple-600 font-bold'>Garage Name</th>
         <th className='text-center text-purple-600 font-bold'>Phone</th>
