@@ -11,15 +11,15 @@ const Navbar = () => {
   const [garage,garageLoading]=useGarage(user?.email)
 
 
-  if(adminLoading||garageLoading){
+  if(adminLoading && garageLoading){
     return <Loading/>
   }
   const menuItems =
     <>
        <li ><Link to='/'>Home</Link></li>
-      {!admin  &&   <>
+      {!admin  && !garage &&   <>
         <li><Link to='/garagesList'>GarageList</Link></li>
-        <li><Link to='/emergencyService'><span></span>Emergeny Service</Link></li>
+        <li><Link to='/emergencyService'><span className='animate-pulse text-red-500 font-bold'>Emergeny Service</span></Link></li>
       </>}
        {user && !admin && !garage && <>
        
@@ -27,7 +27,7 @@ const Navbar = () => {
         <li><Link to='/dashboard'>Dashboard</Link></li>
        </>}
        {
-        admin && !garage &&  <>
+        admin &&    <>
            <li><Link to='/dashboard'>Dashboard</Link></li>
         </>
        }
@@ -39,7 +39,7 @@ const Navbar = () => {
       
        
        
-       {user?.uid? <li><button onClick={logOut}>Logut <span>{user.displayName}</span></button></li> : <li><Link to='/login'>Login</Link></li>}
+       {user?.uid? <li><button onClick={logOut}>Logout <span>{user.displayName}</span></button></li> : <li><Link to='/login'>Login</Link></li>}
        
        {user?.uid && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
@@ -50,7 +50,7 @@ const Navbar = () => {
     </>
   
   return (
-        <div className="navbar bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-white  ">
+        <div className="navbar sticky z-10  bg-black bg-opacity-30 font-bold text-white  ">
   <div className="navbar-start ">
     <div className="dropdown relative">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -64,7 +64,7 @@ const Navbar = () => {
     <a className=" normal-case lg:text-xl font-bold"><Link to='/'>Taqwaa Automobiles Service Provider</Link></a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 text-yellow-400">
+    <ul className="menu menu-horizontal px-1 ">
       {menuItems}
     </ul>
   </div>

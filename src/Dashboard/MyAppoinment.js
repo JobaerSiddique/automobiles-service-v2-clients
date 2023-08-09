@@ -61,13 +61,13 @@ const MyAppoinment = () => {
     
     return (
         <div className='md:mt-20'>
-            <h1 className='text-center font-bold text-xl text-white lg:text-5xl mt-4 '>Welcome to <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Taqwaa Service</span> </h1>
+            <h1 className='text-center font-bold text-xl text-white lg:text-5xl mt-4 '>Welcome To, <span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500 '>{user.displayName}</span> </h1>
 
             <h3 className='font-semibold text-white text-xl lg:text-2xl mt-5 p-4'>My service Bookings: {booking.length}</h3>
 
          
-            <div className="overflow-x-auto">
-  <table className="table w-full">
+            <div className="overflow-x-auto my-20 flex justify-center">
+  <table className="table w-5/6">
     {/* head */}
     <thead>
       <tr>
@@ -78,6 +78,8 @@ const MyAppoinment = () => {
         <th className='text-center'>Date</th>
         <th className='text-center'>Provider Name</th>
         <th className='text-center' >Tk</th>
+        <th className='text-center' >status</th>
+        <th className='text-center' >Pay</th>
         <th className='text-center'></th>
       </tr>
     </thead>

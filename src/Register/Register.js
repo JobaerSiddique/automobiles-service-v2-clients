@@ -14,7 +14,7 @@ const Register = () => {
     const { createUser,loading,googleLogIn, updateUser}=useContext(AuthContext)
     const [createEmail,setCreateEmail]=useState('')
     const navigate=useNavigate()
-  const imageKey= "709ee6e483bba57e73570d59f5ece0c8"
+  const imageKey= "ad9aaab69e80177d144a35a09e0ba92d"
   const [token]=useToken(createEmail)
   const [signError,setError]=useState('')
 
@@ -29,6 +29,7 @@ const Register = () => {
           const user=result.user;
             console.log(user)
             const image= data.file[0]
+         
             const formData = new FormData();
             formData.append("image",image);
             const url=`https://api.imgbb.com/1/upload?expiration=600&key=${imageKey}`
@@ -153,7 +154,7 @@ const Register = () => {
         return <Loading/>
       }
     return (
-        <div style={{backgroundImage:`url(${login})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}} className='flex justify-center items-center h-screen'>
+        <div style={{backgroundImage:`url(${login})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}} className='bg-fixed flex justify-center items-center h-screen'>
 
 <div className="hero  ">
   <div className="hero-content flex-col lg:flex-row-reverse">

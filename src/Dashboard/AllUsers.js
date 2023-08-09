@@ -79,8 +79,8 @@ const AllUsers = () => {
         <div>
             <h1 className='text-xl lg:text-3xl font-bold text-white mt-8 '>All Users : {users.length}</h1>
             
-            <div className="overflow-x-auto mt-7">
-  <table className="table w-full ">
+            <div className="overflow-x-auto mt-7 flex justify-center">
+  <table className="table w-5/6  ">
     
     <thead >
       <tr className='hover  '>

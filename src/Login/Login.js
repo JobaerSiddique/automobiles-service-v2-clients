@@ -8,6 +8,7 @@ import useToken from '../hooks/UseToken';
 import UseAdmin from '../hooks/UseAdmin';
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
+import useGarage from '../hooks/UseGarage';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const {signIn,loading,googleLogIn}=useContext(AuthContext)
@@ -18,13 +19,18 @@ const Login = () => {
     const {user}=useContext(AuthContext)
     const [admin]=UseAdmin(user?.email)
     const [createEmail,setCreateEmail]=useState('')
+    const [garage]=useGarage(user?.email)
 
-  if(user && admin){
-    let from = location.state?.from?.pathname || '/';
-    return from
-  }
-    let from = location.state?.from?.pathname || "/garagesList" ||'/';
-    if(token || admin){
+  // if(admin || garage){
+  //   const  from = location.state?.from?.pathname || "/";
+  //   return from
+  // }
+let from = location.state?.from?.pathname || "/garagesList";
+
+  
+  
+    
+    if(token || admin ||garage){
       return navigate(from, { replace: true });
     }
   const handleLogin = (data) => {

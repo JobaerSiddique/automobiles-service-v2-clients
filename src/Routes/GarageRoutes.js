@@ -10,7 +10,7 @@ const GarageRoutes = ({children}) => {
   const location = useLocation()
    
 
-  if(garage ){
+  if(user ||garage ){
     return children
   }
   return <Navigate to="/login" state={{ from: location }} replace />;

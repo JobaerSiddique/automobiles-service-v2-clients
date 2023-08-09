@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
-const useGarage = email=>{
+const useGarage = (email)=>{
     const [garage,setGarage]=useState(false)
     const [garageLoading,setGarageLoading]=useState(true)
     useEffect(()=>{

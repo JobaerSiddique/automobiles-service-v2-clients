@@ -12,8 +12,8 @@ const DashboardLayout = () => {
   const {user}= useContext(AuthContext) 
   const [admin,adminLoading]=UseAdmin(user?.email)
   const [garage,garageLoading]=useGarage(user?.email)
-console.log(garage);
-  if(adminLoading ||garageLoading){
+console.log();
+  if(adminLoading ||garageLoading  ){
     return <Loading/>
   }
   return (
@@ -30,18 +30,21 @@ console.log(garage);
     <label htmlFor="dashboard-modal" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-60  text-base-content bg-slate-900 text-white">
      
-        {!admin && <>
-          <li><Link to='/dashboard'>My Bookings</Link></li>
-          <li><Link to='/dashboard/review'>Review</Link></li>
+        {!admin && !garage && <>
+          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard'>My Bookings</Link></li>
+          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/review'>Review</Link></li>
+          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/payment/paymenthistory'>Payment History</Link></li>
         </>}
-     {admin && !garage && <>
-      <li><Link to='/dashboard/user'>All Users</Link></li>
-      <li><Link to='/dashboard/admin/allGarage'>All Garages</Link></li>
-      <li><Link to='/dashboard/admin/manageOrders'>Manage All Bookings</Link></li>
+     {admin && <>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/user'>All Users</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/allGarage'>All Garages</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/manageOrders'>Manage All Bookings</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/add-garage'>Add Garage</Link></li>
      
      </>}
      {garage && !admin && <>
-      <li><Link to='/dashboard/garage/garageOrder'>Orders</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/garage/garagehome'>GarageHome</Link></li>
+     
      </>}
     
     </ul>

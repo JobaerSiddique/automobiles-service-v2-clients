@@ -1,6 +1,6 @@
 
 import { useQuery } from '@tanstack/react-query';
-import React  from 'react';
+import React, { useEffect }  from 'react';
 import Loading from '../Shared/Loading';
 
 
@@ -18,19 +18,21 @@ const ManageAllOrder = () => {
         return data
     }
    })
-   
+   useEffect(()=>{
+    refetch()
+   },[refetch])
 
     if(isLoading){
         return <Loading/>
     }
     return (
         <div>
-            <h1 className='text-center font-bold lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-200 to-pink-200'>Manage All Services : {services.length}</h1>
+            <h1 className='text-center mt-10 font-bold lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600'>Manage All Services : {services.length}</h1>
 
 
-            <div className='mt-8'>
-            <div className="overflow-x-auto border">
-  <table className="table  w-full ">
+            <div className='my-20'>
+            <div className="overflow-x-auto flex justify-center">
+  <table className="table w-5/6 ">
     {/* head */}
     <thead >
       <tr>

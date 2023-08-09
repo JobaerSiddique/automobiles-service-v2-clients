@@ -2,19 +2,25 @@
 
 
 import EmergencyService from "../Bookings/EmergencyService";
+import AddGarage from "../Dashboard/AddGarage/AddGarage";
 import AllGarages from "../Dashboard/AllGarages";
 import AllUsers from "../Dashboard/AllUsers";
 import ManageAllOrder from "../Dashboard/ManageAllOrder";
 import MyAppoinment from "../Dashboard/MyAppoinment";
 import Review from "../Dashboard/Review";
-import GarageOrder from "../GarageSection/GarageOrder";
+
 import DashboardLayout from "../Layout/DashBoardLayout/DashboardLayout";
 import Main from "../Layout/Main";
 import Login from "../Login/Login";
 import Garage from "../Pages/GarageList/Garage";
 import Garages from "../Pages/GarageList/Garages";
 import Home from "../Pages/Home";
+import Payment from "../Payment/Payment/Payment";
+import PaymentFailed from "../Payment/Payment/PaymentFailed";
+import PaymentHistory from "../Payment/Payment/PaymentHistory";
+import PaymentSuccess from "../Payment/Payment/PaymentSuccess";
 import Register from "../Register/Register";
+import GarageHome from "../components/GarageHome/GarageHome";
 import AdminRoutes from "./AdminRoutes";
 import GarageRoutes from "./GarageRoutes";
 import RequireAuth from "./RequireAuth";
@@ -50,7 +56,23 @@ const router = createBrowserRouter([
             },
             {
                 path:'/emergencyService',
-                element:<EmergencyService/>
+                element:<RequireAuth><EmergencyService/></RequireAuth>
+            },
+           
+            {
+                path:'/payment/:id',
+                element:<Payment/>,
+                loader:({params})=> fetch(`http://localhost:5000/booked/${params.id}`)
+            },
+            {
+                path:'/payment/success/:transId',
+                element:<PaymentSuccess/>,
+                
+            },
+            {
+                path:'/payment/failed/:transId',
+                element:<PaymentFailed/>,
+                
             },
            
            
@@ -66,6 +88,10 @@ const router = createBrowserRouter([
            {
             path:'/dashboard',
             element:<MyAppoinment/>
+           },
+           {
+            path:'/dashboard/payment/paymenthistory',
+            element:<PaymentHistory/>
            },
            {
             path:'/dashboard/review',
@@ -84,8 +110,13 @@ const router = createBrowserRouter([
             element:<AdminRoutes><ManageAllOrder/></AdminRoutes>
            },
            {
-            path:'/dashboard/garage/garageOrder',
-            element:<GarageRoutes><GarageOrder/></GarageRoutes>
+            path:'/dashboard/admin/add-garage',
+            element:<AdminRoutes><AddGarage/></AdminRoutes>
+           },
+           
+           {
+            path:'/dashboard/garage/garagehome',
+            element:<GarageRoutes><GarageHome/></GarageRoutes>
            }
         ]
     }
