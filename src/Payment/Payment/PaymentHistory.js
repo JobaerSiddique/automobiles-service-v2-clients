@@ -19,7 +19,7 @@ const PaymentHistory = () => {
     return (
         <div >
             <h1 className='text-center text-yellow-500 font-extralight text-5xl mt-10 motion-safe:animate-bounce'>Hello, {user?.displayName}</h1>
-          
+          <h1 className='text-white font-bold text-3xl'>Total Payment :{history.length}</h1>
             <div className="overflow-x-auto my-20 flex justify-center  ">
   <table className="table bg-transparent w-5/6 ">
     <thead>

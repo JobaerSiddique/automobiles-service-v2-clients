@@ -4,6 +4,7 @@ import Counter from '../Shared/Counter';
 import ExperienceInfo from './ExperienceInfo';
 import FastService from './FastService';
 import UserReview from './UserReview/UserReview';
+import AboutUs from './About Us/AboutUs';
 
 const Home = () => {
     
@@ -15,6 +16,7 @@ const Home = () => {
             <ExperienceInfo/>
             <FastService/>
             <UserReview/>
+            <AboutUs/>
         </div>
     );
 };

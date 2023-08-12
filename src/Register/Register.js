@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthContext/AuthProvider';
-import login from '../images/login.jpg'
+
 import glogo from '../images/google logo.png'
 import { toast } from 'react-toastify';
 import useToken from '../hooks/UseToken';
 import Loading from '../Shared/Loading';
+import data from '../data2.json'
+import Lottie from "lottie-react";
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -154,23 +156,22 @@ const Register = () => {
         return <Loading/>
       }
     return (
-        <div style={{backgroundImage:`url(${login})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}} className='bg-fixed flex justify-center items-center h-screen'>
+      <>
+        
 
-<div className="hero  ">
-  <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="text-center lg:text-left">
-     <img className='ml-5' src='' alt="" />
-    </div>
-    
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+<div className="hero min-h-screen ">
+  <div className="hero-content flex-col lg:flex-row-reverse gap-10">
+  <Lottie animationData={data} loop={true} />
+    <div className='w-[80%]'>
+       <div className="card glass w-full flex-shrink-1  shadow-2xl ">
       
-      <div className="card-body ">
+      <div className="card-body w-full  ">
       
-    <h2 className='text-3xl text-center font-bold text-orange-500' data-aos="fade-down"  data-aos-duration="2000">Register</h2>
+    <h2 className='text-4xl text-center font-bold text-cyan-500' data-aos="fade-down"  data-aos-duration="2000">Register</h2>
     <form onSubmit={handleSubmit(handleSignUp)}>
-    <div className="form-control w-full max-w-xs"  data-aos="fade-down-left" data-aos-duration="2500">
+    <div className="form-control w-full "  >
   <label className="label">
-    <span className="label-text font-bold">Name <span className='text-red-500 ml-1'>*</span></span>
+    <span className="label-text text-white font-bold">Name <span className='text-red-500 ml-1'>*</span></span>
   </label>
   <input 
   type="text" 
@@ -182,9 +183,9 @@ const Register = () => {
   className="input input-bordered w-full " />
   {errors.name?.type ==='required' && <span className='text-red-500 font-semibold  mt-2'>{errors.name?.message}</span>}
 </div>
-    <div className="form-control w-full max-w-xs mt-2" data-aos="fade-right" data-aos-duration="2500">
+    <div className="form-control w-full mt-2" >
   <label className="label">
-    <span className="label-text font-bold">Email <span className='text-red-500 ml-1'>*</span></span>
+    <span className="label-text text-white font-bold">Email <span className='text-red-500 ml-1'>*</span></span>
   </label>
   <input 
   type="email" 
@@ -196,9 +197,9 @@ const Register = () => {
   className="input input-bordered w-full " />
   {errors.email?.type ==='required' && <span className='text-red-500 font-semibold mt-2'>{errors.email?.message}</span>}
 </div>
-    <div className="form-control w-full max-w-xs mt-2" data-aos="fade-left" data-aos-duration="3000">
+    <div className="form-control w-full  mt-2">
   <label className="label">
-    <span className="label-text font-bold">Password <span className='text-red-500  ml-1'>*</span></span>
+    <span className="label-text text-white font-bold">Password <span className='text-red-500  ml-1'>*</span></span>
   </label>
   <input 
   type="password" 
@@ -210,9 +211,9 @@ const Register = () => {
   className="input input-bordered w-full " />
   {errors.password?.type ==='required' && <span className='text-red-500 font-semibold  mt-2'>{errors.password?.message}</span>}
 </div>
-    <div className="form-control w-full max-w-xs mt-2" data-aos="fade-left" data-aos-duration="3000">
+    <div className="form-control w-full  mt-2">
   <label className="label">
-    <span className="label-text font-bold">Image <span className='text-red-500 ml-1'>*</span></span>
+    <span className="label-text text-white font-bold">Image <span className='text-red-500 ml-1'>*</span></span>
   </label>
   <input 
   type="file" 
@@ -225,10 +226,10 @@ const Register = () => {
   {errors.image?.type ==='required' && <span className='text-red-500 font-semibold  mt-2'>{errors.image?.message}</span>}
 </div>
 {signError && <p>{signError}</p>}
-<p className='mt-2 font-bold'>Already Have an Account? <span className='text-orange-600'><Link to='/login'>Please login</Link></span></p>
-<div className='flex justify-center items-center '>
-<input type="checkbox" onClick={()=> setAgree(!agree)} className="checkbox checkbox-success mt-2" id='terms' />
-<label className={`ps-2 ${agree? '':'text-red-500 font-bold'} ml-2` } htmlFor="terms"><small>Accept Taqwaa service Terms and conditions</small></label>
+<p className='my-4 font-bold'>Already Have an Account?  <span className='text-orange-600 ml-2'><Link to='/login'>Please login</Link></span></p>
+<div className='flex  items-center mt-2 '>
+<input type="checkbox" onClick={()=> setAgree(!agree)} className="checkbox checkbox-warning mt-2" id='terms' />
+<label className={`ps-2 ${agree? '':'text-red-500 font-bold'} ml-2 mt-2 ` } htmlFor="terms">Accept Taqwaa service Terms and conditions</label>
 </div>
 <input disabled={!agree}  type="submit" value="Sign UP" className='btn btn-primary mt-10 w-full hover:scale-x-105' />  
 <div className="divider">OR</div>
@@ -239,82 +240,11 @@ const Register = () => {
         
       </div>
     </div>
+    </div>
   </div>
 </div>
-            {/* <div className="card w-96  max-w-sm  glass shadow-2xl"  data-aos="fade-up">
-  
-  <div className="card-body">
-    <h2 className='text-3xl text-center font-bold text-orange-500' data-aos="fade-down"  data-aos-duration="2000">Register</h2>
-    <form onSubmit={handleSubmit(handleSignUp)}>
-    <div className="form-control w-full max-w-xs"  data-aos="fade-down-left" data-aos-duration="2500">
-  <label className="label">
-    <span className="label-text font-bold">Name <span className='text-red-500 ml-1'>*</span></span>
-  </label>
-  <input 
-  type="text" 
-  placeholder="Enter Your Name" 
-  {...register("name", { required:{
-    value:true,
-    message:"Name is required"
-  }  })} 
-  className="input input-bordered w-full " />
-  {errors.name?.type ==='required' && <span className='text-red-500 font-semibold  mt-2'>{errors.name?.message}</span>}
-</div>
-    <div className="form-control w-full max-w-xs mt-2" data-aos="fade-right" data-aos-duration="2500">
-  <label className="label">
-    <span className="label-text font-bold">Email <span className='text-red-500 ml-1'>*</span></span>
-  </label>
-  <input 
-  type="email" 
-  placeholder="Enter Your Email" 
-  {...register("email", { required:{
-    value:true,
-    message:"Email Address is required"
-  }  })} 
-  className="input input-bordered w-full " />
-  {errors.email?.type ==='required' && <span className='text-red-500 font-semibold mt-2'>{errors.email?.message}</span>}
-</div>
-    <div className="form-control w-full max-w-xs mt-2" data-aos="fade-left" data-aos-duration="3000">
-  <label className="label">
-    <span className="label-text font-bold">Password <span className='text-red-500  ml-1'>*</span></span>
-  </label>
-  <input 
-  type="password" 
-  placeholder="Enter Your Password" 
-  {...register("password", { required:{
-    value:true,
-    message:"Password is required"
-  }  })} 
-  className="input input-bordered w-full " />
-  {errors.password?.type ==='required' && <span className='text-red-500 font-semibold  mt-2'>{errors.password?.message}</span>}
-</div>
-    <div className="form-control w-full max-w-xs mt-2" data-aos="fade-left" data-aos-duration="3000">
-  <label className="label">
-    <span className="label-text font-bold">Image <span className='text-red-500 ml-1'>*</span></span>
-  </label>
-  <input 
-  type="file" 
-  placeholder="Enter Your Photo" 
-  {...register("file", { required:{
-    value:true,
-    message:"Image is required"
-  }  })} 
-  className="input input-bordered w-full " />
-  {errors.image?.type ==='required' && <span className='text-red-500 font-semibold  mt-2'>{errors.image?.message}</span>}
-</div>
-<p className='mt-2 font-bold'>Already Have an Account? <span className='text-orange-600'><Link to='/login'>Please login</Link></span></p>
-<div className='flex justify-center items-center '>
-<input type="checkbox" onClick={()=> setAgree(!agree)} className="checkbox checkbox-success mt-2" id='terms' />
-<label className={`ps-2 ${agree? '':'text-red-500 font-bold'} ml-2` } htmlFor="terms"><small>Accept Taqwaa service Terms and conditions</small></label>
-</div>
-<input disabled={!agree}  type="submit" value="Sign UP" className='btn glass mt-10 w-full hover:scale-x-105' />  
-<div className="divider">OR</div>
 
-    </form>
-    <button  onClick={handleGoogleLogIn} className='btn glass  w-full hover:scale-x-95'><img width='40px' src={glogo} alt="" /><p>Contiune With Google</p></button>
-  </div>
-</div> */}
-        </div>
+</>
     );
 };
 

@@ -9,6 +9,8 @@ import UseAdmin from '../hooks/UseAdmin';
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 import useGarage from '../hooks/UseGarage';
+import Lottie from "lottie-react";
+import data from '../login.json'
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const {signIn,loading,googleLogIn}=useContext(AuthContext)
@@ -20,18 +22,24 @@ const Login = () => {
     const [admin]=UseAdmin(user?.email)
     const [createEmail,setCreateEmail]=useState('')
     const [garage]=useGarage(user?.email)
+   
 
   // if(admin || garage){
   //   const  from = location.state?.from?.pathname || "/";
   //   return from
   // }
-let from = location.state?.from?.pathname || "/garagesList";
+ let from=location.state?.from?.pathname || "/garagesList";
+
+
+
 
   
-  
     
-    if(token || admin ||garage){
+    if(token ||user){
       return navigate(from, { replace: true });
+    }
+    if(admin ||garage){
+      return navigate('/dashboard');
     }
   const handleLogin = (data) => {
     signIn(data.email,data.password)
@@ -85,13 +93,19 @@ const saveUser=(name,email)=>{
       return <Loading/>
     }
     return (
-        <div style={{backgroundImage:`url(${login})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}} className='flex justify-center items-center h-screen'>
+      <>
+       
+
+<div className="hero min-h-screen  gap-12">
+  <div className="hero-content flex-col lg:flex-row">
+  <Lottie animationData={data} loop={true} />
+  <div >
             <div className="card w-96 glass shadow-2xl" >
   
   <div className="card-body">
     <h2 className='text-3xl text-center font-bold text-orange-500'  >Login</h2>
     <form onSubmit={handleSubmit(handleLogin)}>
-    <div className="form-control w-full max-w-xs">
+    <div className="form-control w-full ">
   <label className="label">
     <span className="label-text font-bold">Email <span className='text-red-500 ml-1'>*</span></span>
   </label>
@@ -128,6 +142,9 @@ const saveUser=(name,email)=>{
   </div>
 </div>
         </div>
+  </div>
+</div>
+</>
     );
 };
 

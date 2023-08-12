@@ -1,6 +1,4 @@
 
-
-
 import EmergencyService from "../Bookings/EmergencyService";
 import AddGarage from "../Dashboard/AddGarage/AddGarage";
 import AllGarages from "../Dashboard/AllGarages";
@@ -15,6 +13,7 @@ import Login from "../Login/Login";
 import Garage from "../Pages/GarageList/Garage";
 import Garages from "../Pages/GarageList/Garages";
 import Home from "../Pages/Home";
+import AllPayment from "../Payment/Payment/AllPayment/AllPayment";
 import Payment from "../Payment/Payment/Payment";
 import PaymentFailed from "../Payment/Payment/PaymentFailed";
 import PaymentHistory from "../Payment/Payment/PaymentHistory";
@@ -87,36 +86,40 @@ const router = createBrowserRouter([
         children:[
            {
             path:'/dashboard',
-            element:<MyAppoinment/>
+            element:<RequireAuth><MyAppoinment/></RequireAuth>
            },
            {
             path:'/dashboard/payment/paymenthistory',
-            element:<PaymentHistory/>
+            element:<RequireAuth><PaymentHistory/></RequireAuth>
            },
            {
             path:'/dashboard/review',
-            element:<Review/>
+            element:<RequireAuth><Review/></RequireAuth>
            },
            {
             path:'/dashboard/user',
-            element:<AdminRoutes><AllUsers/></AdminRoutes>
+            element:<RequireAuth><AdminRoutes><AllUsers/></AdminRoutes></RequireAuth>
            },
            {
             path:'/dashboard/admin/allGarage',
-            element:<AdminRoutes><AllGarages/></AdminRoutes>
+            element:<RequireAuth><AdminRoutes><AllGarages/></AdminRoutes></RequireAuth>
            },
            {
             path:'/dashboard/admin/manageOrders',
-            element:<AdminRoutes><ManageAllOrder/></AdminRoutes>
+            element:<RequireAuth><AdminRoutes><ManageAllOrder/></AdminRoutes></RequireAuth>
            },
            {
             path:'/dashboard/admin/add-garage',
-            element:<AdminRoutes><AddGarage/></AdminRoutes>
+            element:<RequireAuth><AdminRoutes><AddGarage/></AdminRoutes></RequireAuth>
+           },
+           {
+            path:'/dashboard/admin/allpayment',
+            element:<RequireAuth><AdminRoutes><AllPayment/></AdminRoutes></RequireAuth>
            },
            
            {
             path:'/dashboard/garage/garagehome',
-            element:<GarageRoutes><GarageHome/></GarageRoutes>
+            element:<RequireAuth><GarageRoutes><GarageHome/></GarageRoutes></RequireAuth>
            }
         ]
     }

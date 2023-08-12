@@ -28,12 +28,12 @@ const Navbar = () => {
        </>}
        {
         admin &&    <>
-           <li><Link to='/dashboard'>Dashboard</Link></li>
+           <li><Link to='/dashboard/user'>Dashboard</Link></li>
         </>
        }
        {
         garage && !admin &&  <>
-           <li><Link to='/dashboard'>Dashboard</Link></li>
+           <li><Link to='/dashboard/garage/garagehome'>Dashboard</Link></li>
         </>
        }
       

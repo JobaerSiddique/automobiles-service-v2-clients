@@ -7,6 +7,16 @@ import UseAdmin from '../../hooks/UseAdmin';
 import Loading from '../../Shared/Loading';
 import Footer from '../../Shared/Footer';
 import useGarage from '../../hooks/UseGarage';
+import { AiFillFileAdd } from 'react-icons/ai';
+import {GiMechanicGarage } from 'react-icons/gi';
+import {FiUsers } from 'react-icons/fi';
+import {MdPayment } from 'react-icons/md';
+import {MdRateReview } from 'react-icons/md';
+import {FaHistory } from 'react-icons/fa';
+import {TbBrandBooking} from 'react-icons/tb';
+import {FcManager} from 'react-icons/fc';
+
+
 
 const DashboardLayout = () => {
   const {user}= useContext(AuthContext) 
@@ -31,15 +41,16 @@ console.log();
     <ul className="menu p-4 w-60  text-base-content bg-slate-900 text-white">
      
         {!admin && !garage && <>
-          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard'>My Bookings</Link></li>
-          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/review'>Review</Link></li>
-          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/payment/paymenthistory'>Payment History</Link></li>
+          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard'><span className='font-bold text-2xl'><TbBrandBooking/></span>My Bookings</Link></li>
+          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/review'><span className='font-bold text-2xl'><MdRateReview/></span> Review</Link></li>
+          <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/payment/paymenthistory'><span className='font-bold text-2xl'><FaHistory/></span> Payment History</Link></li>
         </>}
      {admin && <>
-      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/user'>All Users</Link></li>
-      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/allGarage'>All Garages</Link></li>
-      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/manageOrders'>Manage All Bookings</Link></li>
-      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/add-garage'>Add Garage</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/user'> <span className='font-bold text-2xl'><FiUsers/></span> All Users</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/allGarage'><span className='font-bold text-2xl'><GiMechanicGarage/></span>All Garages</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/manageOrders'><span className='font-bold text-2xl'><FcManager/></span> Manage All Bookings</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/add-garage'> <span className='font-bold text-2xl'><AiFillFileAdd/></span>Add Garage</Link></li>
+      <li className='hover:bg-white hover:text-black hover:rounded-full '><Link to='/dashboard/admin/allpayment'> <span className='font-bold text-2xl'><MdPayment/></span>All Payment</Link></li>
      
      </>}
      {garage && !admin && <>
