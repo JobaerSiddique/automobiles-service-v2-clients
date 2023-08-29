@@ -12,7 +12,7 @@ const GarageHomeInfo = ({garage}) => {
     return (
       <>
         <div>
-    <h1 className='text-center text-white my-10 text-2xl font-semibold text-transparent lg:text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>       
+    <h1 className='text-center text-white mt-10 text-2xl font-semibold text-transparent lg:text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>       
     Hi,{providername}
  
 </h1>
@@ -44,9 +44,11 @@ const GarageHomeInfo = ({garage}) => {
 </div>
 
         </div>
+        <div>
         {providername && <GarageOrder
         providerName={providername}
         ></GarageOrder>}
+        </div>
       </>
     );
 };

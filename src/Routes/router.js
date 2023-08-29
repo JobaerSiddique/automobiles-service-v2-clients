@@ -14,11 +14,17 @@ import Garage from "../Pages/GarageList/Garage";
 import Garages from "../Pages/GarageList/Garages";
 import Home from "../Pages/Home";
 import AllPayment from "../Payment/Payment/AllPayment/AllPayment";
+import GaragePayment from "../Payment/Payment/GaragePayment";
+import GaragePaymentFail from "../Payment/Payment/GaragePaymentSection/GaragePaymentFail";
+import GaragePaymentSuccess from "../Payment/Payment/GaragePaymentSection/GaragePaymentSuccess";
+import NewPayment from "../Payment/Payment/NewPayment/NewPayment";
+import SingleGaragepay from "../Payment/Payment/NewPayment/SingleGaragepay";
 import Payment from "../Payment/Payment/Payment";
 import PaymentFailed from "../Payment/Payment/PaymentFailed";
 import PaymentHistory from "../Payment/Payment/PaymentHistory";
 import PaymentSuccess from "../Payment/Payment/PaymentSuccess";
 import Register from "../Register/Register";
+import NotFound from "../Shared/NotFound";
 import GarageHome from "../components/GarageHome/GarageHome";
 import AdminRoutes from "./AdminRoutes";
 import GarageRoutes from "./GarageRoutes";
@@ -68,9 +74,20 @@ const router = createBrowserRouter([
                 element:<PaymentSuccess/>,
                 
             },
+            
+            {
+                path:'/garage/payment/failed/:transId',
+                element:<GaragePaymentFail/>,
+                
+            },
             {
                 path:'/payment/failed/:transId',
                 element:<PaymentFailed/>,
+                
+            },
+            {
+                path:'*',
+                element:<NotFound/>,
                 
             },
            
@@ -114,8 +131,23 @@ const router = createBrowserRouter([
            },
            {
             path:'/dashboard/admin/allpayment',
-            element:<RequireAuth><AdminRoutes><AllPayment/></AdminRoutes></RequireAuth>
+            element:<RequireAuth><AdminRoutes><NewPayment/></AdminRoutes></RequireAuth>,
+            
            },
+           {
+            path:'/dashboard/garage/payment/success/:transId',
+            element:<AdminRoutes><GaragePaymentSuccess/></AdminRoutes>,
+            
+        },
+        //    {
+        //     path:'/dashboard/admin/garagePayment',
+        //     element:<RequireAuth><AdminRoutes><GaragePayment/></AdminRoutes></RequireAuth>
+        //    },
+        //    {
+        //     path:'/dashboard/admin/garagePayment/:id',
+        //     element:<RequireAuth><AdminRoutes><SingleGaragepay/></AdminRoutes></RequireAuth>,
+        //     loader:({params})=> fetch(`http://localhost:5000/garagePayment/${params.id}`)
+        //    },
            
            {
             path:'/dashboard/garage/garagehome',

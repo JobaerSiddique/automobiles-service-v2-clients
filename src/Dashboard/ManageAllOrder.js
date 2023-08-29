@@ -15,6 +15,7 @@ const ManageAllOrder = () => {
              }
         })
         const data= await res.json()
+        console.log(data);
         return data
     }
    })
@@ -37,26 +38,31 @@ const ManageAllOrder = () => {
     <thead >
       <tr>
         <th></th>
-        <th className='text-center'>Customer Email</th>
+        <th className='text-center'>Customer Name</th>
         <th className='text-center'>Provider Name</th>
-        <th className='text-center'>ServiceName</th>
+        <th className='text-center'> ServiceName</th>
         <th className='text-center'>Price</th>
-        <th className='text-center' >Date</th>
-        <th className='text-center'>Registration No</th>
-        <th className='text-center'>Phone</th>
+        <th className='text-center'>Service Date</th>
+        <th className='text-center' >Registration No</th>
+        <th className='text-center'>Transaction ID</th>
+        <th className='text-center'>Payment Time</th>
       </tr>
     </thead>
     <tbody>
       
       {services.map((ser,index)=><tr key={ser._id} className="hover">
         <th className='text-center'>{index+1}</th>
-        <td className='text-center'>{ser.CustomerEmail}</td>
+        <td className='text-center font-bold text-purple-800'>{ser.CustomerName}</td>
         <td className='text-center font-bold text-green-500'>{ser.providerName}</td>
         <td className='text-center'>{ser.serviceName}</td>
-        <td className='text-center'>{ser.price}</td>
+        
+        <td className='text-center font-bold text-orange-600'>{ser.price}TK</td>
         <td className='text-center'>{ser.date}</td>
         <td className='text-center'>{ser.RegistrationNo}</td>
-        <td className='text-center'>{ser.Phone}</td>
+        <td className='text-center font-bold text-indigo-800'>{ser.transactionId}</td>
+        <td className='text-center'>{ser.createdAt}</td>
+       
+        
       </tr>)}
       
      

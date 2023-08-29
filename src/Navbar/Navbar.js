@@ -4,6 +4,7 @@ import { AuthContext } from '../Contexts/AuthContext/AuthProvider';
 import UseAdmin from '../hooks/UseAdmin';
 import Loading from '../Shared/Loading';
 import useGarage from '../hooks/UseGarage';
+import img from '../images/loading.png'
 
 const Navbar = () => {
   const {user,logOut}=useContext(AuthContext) 
@@ -61,7 +62,7 @@ const Navbar = () => {
         {menuItems}
       </ul>
     </div>
-    <a className=" normal-case lg:text-xl font-bold"><Link to='/'>Taqwaa Automobiles Service Provider</Link></a>
+    <a className=" normal-case lg:text-xl font-bold"><Link className='flex justify-center items-center' to='/'><img width="60px"  src={img} alt="" /><small className='font-rubik'>Taqwaa Service Provider</small></Link></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 ">

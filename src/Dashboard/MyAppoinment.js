@@ -28,6 +28,7 @@ const MyAppoinment = () => {
      }
     })
     const data=await res.json();
+    console.log('t',data);
     return data
   }
   })

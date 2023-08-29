@@ -9,6 +9,7 @@ import {
   } from "recharts";
   import { AiTwotoneDelete } from 'react-icons/ai'
 import { Flip, toast } from 'react-toastify';
+import AdminPayGarage from '../components/GarageHome/AdminPayGarage/AdminPayGarage';
 const GarageOrder = ({providerName}) => {
    console.log('providerName',providerName);
   //  const [orders,setOrder]=useState([])
@@ -78,6 +79,7 @@ const GarageOrder = ({providerName}) => {
   }
 
     return (
+       <>
         <div>
            <h1 className='text-white font-semibold lg:text-5xl text-xl text-center mt-10'>Orders Info By Customers</h1>
            <div className='grid gap-5 lg:grid-cols-2 grid-cols-1 justify-items-center'>
@@ -173,6 +175,8 @@ const GarageOrder = ({providerName}) => {
 </div>
 </div>
         </div>
+        {AdminPayGarage && <AdminPayGarage providerName={providerName} ></AdminPayGarage>}
+       </>
     );
 };
 

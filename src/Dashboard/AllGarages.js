@@ -44,7 +44,7 @@ const AllGarages = () => {
 
 
             <div className="overflow-x-auto">
-  <table className="table w-full">
+  <table className="table w-10/12 mx-auto my-10">
    
     <thead >
       <tr className='bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white'>

@@ -5,11 +5,9 @@ module.exports = {
   theme: {
     extend: {},
     daisyui:{
-      themes: [
-        
-        "synthwave",
-       
-      ],
+      themes: {
+        rubik:['Archivo Black', 'sans-serif']
+      }
     }
     
   },

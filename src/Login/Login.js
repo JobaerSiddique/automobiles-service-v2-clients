@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext,useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthContext/AuthProvider';
-import login from '../images/login.jpg'
 import glogo from '../images/google logo.png'
 import useToken from '../hooks/UseToken';
 import UseAdmin from '../hooks/UseAdmin';
@@ -11,9 +10,10 @@ import Loading from '../Shared/Loading';
 import useGarage from '../hooks/UseGarage';
 import Lottie from "lottie-react";
 import data from '../login.json'
+import Swal from 'sweetalert2';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const {signIn,loading,googleLogIn}=useContext(AuthContext)
+    const {signIn,loading,googleLogIn,resetPassword}=useContext(AuthContext)
     const navigate=useNavigate()
     const [loginToken,setLoginToken]=useState()
     const [token]=useToken(loginToken)
@@ -24,10 +24,7 @@ const Login = () => {
     const [garage]=useGarage(user?.email)
    
 
-  // if(admin || garage){
-  //   const  from = location.state?.from?.pathname || "/";
-  //   return from
-  // }
+  
  let from=location.state?.from?.pathname || "/garagesList";
 
 
@@ -47,6 +44,13 @@ const Login = () => {
       const user = result.user;
       console.log(user.email)
       setLoginToken(user?.email)
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'User  Login Successfully ',
+        showConfirmButton: false,
+        timer: 2500
+      })
       
     })
 };
@@ -86,9 +90,17 @@ const saveUser=(name,email)=>{
       console.log('google',user)
       saveUser(user.displayName,user.email)
       setLoginToken(user?.email)
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'User  Login Successfully ',
+        showConfirmButton: false,
+        timer: 2500
+      })
       
     })
   }
+  
     if(loading){
       return <Loading/>
     }
