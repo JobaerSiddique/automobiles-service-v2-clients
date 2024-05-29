@@ -4,7 +4,7 @@ import GarageInfo from './GarageInfo';
 const Garages = () => {
     const [garages,setGarages]=useState([])
    useEffect(()=>{
-        fetch('http://localhost:5000/garages')
+        fetch('https://taqwaa-services-v2-servers.vercel.app/garages')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

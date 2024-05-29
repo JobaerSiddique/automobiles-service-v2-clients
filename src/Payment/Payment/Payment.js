@@ -18,7 +18,7 @@ const payment=()=>{
         product_id:_id
 
     }
-    fetch('http://localhost:5000/payment',{
+    fetch('https://taqwaa-services-v2-servers.vercel.app/payment',{
         method:'POST',
        
         headers:{'content-type':'application/json'},

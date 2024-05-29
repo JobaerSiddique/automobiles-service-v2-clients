@@ -25,7 +25,7 @@ const GarageOrder = ({providerName}) => {
    const {data:orders=[],refetch}=useQuery({
     queryKey:['orders',providerName],
     queryFn: async ()=>{
-      const res = await fetch(`http://localhost:5000/garageOrder?providerName=${providerName}`)
+      const res = await fetch(`https://taqwaa-services-v2-servers.vercel.app/garageOrder?providerName=${providerName}`)
       const data = await res.json()
       return data
      

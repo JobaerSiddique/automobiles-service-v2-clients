@@ -5,7 +5,7 @@ const UsePayment = () => {
     const {data:payments={},refetch}=useQuery({
         queryKey:[],
         queryFn: async ()=>{
-            const res= await fetch('http://localhost:5000/allpayment')
+            const res= await fetch('https://taqwaa-services-v2-servers.vercel.app/allpayment')
             const data= res.json()
            
            console.log('payment',data);

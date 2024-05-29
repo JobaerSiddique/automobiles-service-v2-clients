@@ -65,7 +65,7 @@ const Register = () => {
         name:name,
         email:email
       }
-      fetch('http://localhost:5000/user',{
+      fetch('https://taqwaa-services-v2-servers.vercel.app/user',{
       method:'post',
       headers:{
         'content-type':'application/json'

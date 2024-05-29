@@ -11,7 +11,7 @@ const GarageHome = () => {
    const [garages,setGarages]=useState([])
 
    useEffect(()=>{
-    fetch(`http://localhost:5000/garages?email=${user?.email}`)
+    fetch(`https://taqwaa-services-v2-servers.vercel.app/garages?email=${user?.email}`)
     .then(res=>res.json())
     .then(data=>{
         console.log('garage data',data);

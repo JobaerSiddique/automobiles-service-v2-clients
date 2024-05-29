@@ -10,7 +10,7 @@ const AllUsers = () => {
     const {data:users=[],refetch,isLoading}=useQuery({
         queryKey:['users'],
         queryFn: async ()=> {
-            const res = await fetch('http://localhost:5000/user',{
+            const res = await fetch('https://taqwaa-services-v2-servers.vercel.app/user',{
                 headers:{
                     authorizaion:`bearer ${localStorage.getItem('accessToken')}`
                  }
@@ -24,7 +24,7 @@ const AllUsers = () => {
     const delUser= id=>{
         const processd = window.confirm("are you want to Delete This user?")
         if(processd){
-            fetch(`http://localhost:5000/user/${id}`,{
+            fetch(`https://taqwaa-services-v2-servers.vercel.app/user/${id}`,{
             method:"DELETE",
             headers:{
               authorizaion:`bearer ${localStorage.getItem('accessToken')}`

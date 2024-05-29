@@ -9,7 +9,7 @@ const ManageAllOrder = () => {
    const{data:services=[],refetch,isLoading}=useQuery({
     queryKey:['services'],
     queryFn: async()=>{
-        const res = await fetch('http://localhost:5000/allOrders',{
+        const res = await fetch('https://taqwaa-services-v2-servers.vercel.app/allOrders',{
             headers:{
                 authorizaion:`bearer ${localStorage.getItem('accessToken')}`
              }

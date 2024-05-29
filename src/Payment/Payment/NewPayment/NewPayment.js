@@ -18,7 +18,7 @@ const NewPayment = () => {
     // })
     
     useEffect(()=>{
-      fetch('http://localhost:5000/garageGive')
+      fetch('https://taqwaa-services-v2-servers.vercel.app/garageGive')
       .then(res=>res.json())
       .then(data=>{
         setGarageGive(data)

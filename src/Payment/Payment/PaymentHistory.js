@@ -5,7 +5,7 @@ const PaymentHistory = () => {
    const {user}=useContext(AuthContext)
     const [history,setHistory]=useState([])
    useEffect(()=>{
-        fetch(`http://localhost:5000/booked?email=${user?.email}`,{
+        fetch(`https://taqwaa-services-v2-servers.vercel.app/booked?email=${user?.email}`,{
             headers:{
                 authorizaion:`bearer ${localStorage.getItem('accessToken')}`
              }

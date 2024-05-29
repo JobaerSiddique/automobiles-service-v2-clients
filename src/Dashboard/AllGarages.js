@@ -8,7 +8,7 @@ const AllGarages = () => {
     const{data:garages=[],refetch,isLoading}=useQuery({
         queryKey:['garages'],
         queryFn: async ()=>{
-            const res = await fetch('http://localhost:5000/garages',{
+            const res = await fetch('https://taqwaa-services-v2-servers.vercel.app/garages',{
               
             })
             const data = await res.json()
@@ -19,7 +19,7 @@ const AllGarages = () => {
     const handleDeleteGarage = id =>{
       const confirmDelete = window.confirm('Are You Want to This is Provider')
       if(confirmDelete){
-        fetch(`http://localhost:5000/garages/${id}`,{
+        fetch(`https://taqwaa-services-v2-servers.vercel.app/garages/${id}`,{
         method:"DELETE"
       })
       .then(res=>res.json())

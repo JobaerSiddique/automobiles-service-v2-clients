@@ -5,7 +5,8 @@ import ScrollTrigger from 'react-scroll-trigger';
 const Counter = () => {
     const [countOn,setCountOn]=useState(false)
     return (
-       <div  className='-mt-12 '   >
+       <div data-aos="fade-up"
+       data-aos-duration="2000"  className='-mt-12 '   >
          <div  className="card w-[80%] h-auto bg-gradient-to-r from-indigo-500 to-blue-500 shadow-xl mx-auto grid gap-10 grid-cols-1 lg:grid-cols-3 p-5 ">
   <div>
       <ScrollTrigger onEnter={()=>setCountOn(true)} onExit={()=> setCountOn(false)}>
@@ -26,8 +27,7 @@ const Counter = () => {
       </ScrollTrigger>
   </div>
 </div>
-{/* data-aos="fade-up"
-       data-aos-duration="2000" */}
+{/*  */}
        </div>
     );
 };

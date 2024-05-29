@@ -5,7 +5,7 @@ const AdminPayGarage = ({providerName}) => {
     const [paying,setPaying]=useState({})
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/garageGive?providerName=${providerName}`)
+        fetch(`https://taqwaa-services-v2-servers.vercel.app/garageGive?providerName=${providerName}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data);

@@ -22,7 +22,7 @@ const Review = () => {
           
     
     console.log(dataInfo);
-        fetch('http://localhost:5000/ratings',{
+        fetch('https://taqwaa-services-v2-servers.vercel.app/ratings',{
             method:"post",
             headers:{
                 'content-type':'application/json'

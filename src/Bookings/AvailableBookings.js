@@ -37,7 +37,7 @@ const AvailableBookings = ({selected,serviceId}) => {
    // },[date,provider.providername])
 
    useEffect(()=>{
-      fetch(`http://localhost:5000/garages/${serviceId}`)
+      fetch(`https://taqwaa-services-v2-servers.vercel.app/garages/${serviceId}`)
       .then(res=>res.json())
       .then(data=>{
          console.log('id Data',data)

@@ -6,7 +6,7 @@ const GaragePayment = () => {
    const{data:pays}=useQuery({
     queryKey:[],
     queryFn: async()=> {
-    const res = await fetch('http://localhost:5000/garagePayment')
+    const res = await fetch('https://taqwaa-services-v2-servers.vercel.app/garagePayment')
     const data = await res.json()
     return data
     }

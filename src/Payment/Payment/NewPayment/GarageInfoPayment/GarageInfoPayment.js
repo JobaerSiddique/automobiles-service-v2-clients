@@ -29,7 +29,7 @@ const GarageInfoPayment = ({pays,index}) => {
        
        console.log(info);
      
-      fetch('http://localhost:5000/garagePay',{
+      fetch('https://taqwaa-services-v2-servers.vercel.app/garagePay',{
         method:"post",
         headers:{'content-type':'application/json'},
         body:JSON.stringify(info)

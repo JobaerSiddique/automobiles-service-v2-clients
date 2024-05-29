@@ -6,7 +6,7 @@ const useGarage = (email)=>{
     const [garageLoading,setGarageLoading]=useState(true)
     useEffect(()=>{
         if(email){
-            fetch(`http://localhost:5000/user/admin/garage/${email}`)
+            fetch(`https://taqwaa-services-v2-servers.vercel.app/user/admin/garage/${email}`)
         .then(res=>res.json())
         .then(data=>{
             console.log('garage',data.isGarage);

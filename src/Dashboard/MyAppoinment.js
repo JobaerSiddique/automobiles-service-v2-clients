@@ -36,7 +36,7 @@ const MyAppoinment = () => {
   const handleDeleteService = id =>{
     const process = window.confirm('Are You want to delete this service?')
     if(process){
-      fetch(`http://localhost:5000/booked/${id}`,{
+      fetch(`https://taqwaa-services-v2-servers.vercel.app/booked/${id}`,{
         method:'DELETE'
       })
       .then(res=>res.json())

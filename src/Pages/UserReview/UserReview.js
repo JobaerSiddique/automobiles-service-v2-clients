@@ -14,7 +14,7 @@ const UserReview = () => {
     const{data:ratings=[],refetch}=useQuery({
         queryKey:['rating'],
         queryFn: async ()=>{
-            const res = await fetch('http://localhost:5000/rating')
+            const res = await fetch('https://taqwaa-services-v2-servers.vercel.app/rating')
             const data= await res.json()
             return data
         }

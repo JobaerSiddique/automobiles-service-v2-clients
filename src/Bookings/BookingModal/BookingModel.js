@@ -36,7 +36,7 @@ const handleBooking =  e=>{
     RegistrationNo:Registration,
 
   }
- fetch('http://localhost:5000/booked',{
+ fetch('https://taqwaa-services-v2-servers.vercel.app/booked',{
     method:'post',
     headers:{'content-type':'application/json'},
     body:JSON.stringify(bookings)

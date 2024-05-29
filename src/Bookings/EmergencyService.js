@@ -30,7 +30,7 @@ const EmergencyService = () => {
 const {data:garage=[],isLoading,refetch}=useQuery({
   queryKey:['garage',location],
   queryFn:async()=>{
-    const res = await  fetch(`http://localhost:5000/garages?location=${location}`)
+    const res = await  fetch(`https://taqwaa-services-v2-servers.vercel.app/garages?location=${location}`)
     const data = await res.json()
     console.log('garage',data);
     return data

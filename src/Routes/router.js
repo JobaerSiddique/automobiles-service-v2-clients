@@ -49,7 +49,7 @@ const router = createBrowserRouter([
             {
                 path:'/garage/:id',
                 element:<Garage/>,
-                loader:({params})=>fetch(`http://localhost:5000/garages/${params.id}`)
+                loader:({params})=>fetch(`https://taqwaa-services-v2-servers.vercel.app/garages/${params.id}`)
             },
             {
                 path:'/login',
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
             {
                 path:'/payment/:id',
                 element:<Payment/>,
-                loader:({params})=> fetch(`http://localhost:5000/booked/${params.id}`)
+                loader:({params})=> fetch(`https://taqwaa-services-v2-servers.vercel.app/booked/${params.id}`)
             },
             {
                 path:'/payment/success/:transId',

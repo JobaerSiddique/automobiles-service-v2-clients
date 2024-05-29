@@ -54,7 +54,7 @@ const AddGarage = () => {
             ]
            }
         ]
-        fetch('http://localhost:5000/garages',{
+        fetch('https://taqwaa-services-v2-servers.vercel.app/garages',{
             method:'post',
             headers:{
                 'content-type':'application/json'

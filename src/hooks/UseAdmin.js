@@ -9,7 +9,7 @@ const UseAdmin = (email) => {
     const [admin,setAdmin]=useState(false)
     const [adminLoading,setAdminLoading]=useState(true)
     useEffect(()=>{
-        fetch(`http://localhost:5000/user/admin/${email}`,)
+        fetch(`https://taqwaa-services-v2-servers.vercel.app/user/admin/${email}`,)
         .then(res=>res.json())
         .then(data=>{
             setAdmin(data.isAdmin)
